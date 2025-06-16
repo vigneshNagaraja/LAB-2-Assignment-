@@ -1,29 +1,12 @@
 # LAB-2-Assignment
 Chronic Kidney Disease Classification Using Machine Learning
+Objective
+Build and evaluate classification models to detect Chronic Kidney Disease (CKD) using structured patient data.
 
-#Step 1: Upload and Load Data
-
-from google.colab import files
-uploaded = files.upload()
-import pandas as pd
-
-df = pd.read_csv('ckd_cleaned_imputed.csv')
-df.head()
-
- #Step 2: Basic Cleaning (Whitespace + Categorical Encoding)
-
-# Clean up any stray tabs or spaces
-df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
-
-# Encode categories and target
-binary_map = {
-    'yes': 1, 'no': 0,
-    'present': 1, 'notpresent': 0,
-    'abnormal': 1, 'normal': 0,
-    'good': 1, 'poor': 0,
-    'ckd': 1, 'notckd': 0
-}
-df.replace(binary_map, inplace=True)
+Models Implemented
+Logistic Regression
+ k-Nearest Neighbors (k-NN)
+ Decision Tree
 
  Evaluation Metrics
  Accuracy
